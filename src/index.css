@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@keyframes windShake {
+
+  0%,
+  100% {
+    transform: rotate(-12deg) translateX(0);
+  }
+
+  50% {
+    transform: rotate(-8deg) translateX(5px);
+  }
+}
+
+@keyframes windShakeRight {
+
+  0%,
+  100% {
+    transform: rotate(45deg) scaleX(-1) translateX(0);
+  }
+
+  50% {
+    transform: rotate(40deg) scaleX(-1) translateX(5px);
+  }
+}
+
+.animate-wind-slow {
+  animation: windShake 6s ease-in-out infinite;
+}
+
+.animate-wind-slower {
+  animation: windShakeRight 8s ease-in-out infinite backwards;
+}
